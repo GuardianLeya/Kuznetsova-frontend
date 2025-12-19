@@ -1,5 +1,4 @@
 import React from "react";
-import "./ReviewCard.css";
 
 export default function ReviewCard({ review, showMovieTitle = false, showButtons = false }) {
   return (
