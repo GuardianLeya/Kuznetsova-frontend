@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import Navbar from ".//components/Navbar.jsx";
+import AppHome from "./AppHome";
+import FilmPage from "./pages/FilmPage";
+import ProfilePage from "./pages/ProfilePage";
 
-function App() {
+export default function App() {
+  const [user, setUser] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar user={user} setUser={setUser} />
+      <Routes>
+        <Route path="/" element={<AppHome />} />
+        <Route path="/film/:id" element={<FilmPage />} />
+        <Route path="/profile" element={<ProfilePage user={user} />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

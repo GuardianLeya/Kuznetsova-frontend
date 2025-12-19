@@ -1,38 +1,494 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); 
+*, 
+*::before, 
+*::after { 
+  box-sizing: border-box; 
+} 
+body {
+  margin: 0; 
+  font-family: 'Inter', sans-serif; 
+  background: #0E0F13; 
+  color: #FFFFFF; }
+
+/* ---------- Root Variables ---------- */
+:root {
+  --bg-card: #1A1B1F;
+  --accent: #1F6BFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --tag-bg: rgba(31, 107, 255, 0.15);
+  --tag-color: #9BBcff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ---------- Container ---------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ---------- Navbar ---------- */
+.navbar {
+  width: 100%;
+  padding: 16px 0;
+  background: #0E0F13;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-primary);
+  border: 2px solid var(--accent);
+  background-color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* Search bar & login button */
+.nav-user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-bar {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn.login {
+  background: #1f6bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.logout {
+  background: #e74c3c;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-window {
+  background: #1a1a1a;
+  padding: 24px;
+  border-radius: 16px;
+  width: 360px;
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.modal-title {
+  background: #1F6BFF;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-field label {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 4px;
+}
+
+.modal-field input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #2c2c2c;
+  color: #fff;
+  width: 100%;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.modal-buttons .btn {
+  background: #1F6BFF;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #fff;
+  border: 2px solid var(--accent);
+  background-color: var(--accent);
+  padding: 8px 12px;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+}
+
+.hero .btn.accent {
+  color: var(--text-primary);
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 8px;
+  border-radius: 16px;
+  max-width: 200px;
+}
+
+/* ---------- Stats ---------- */
+.stats {
+  padding: 30px 0;
+}
+
+.stats .container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.stat span {
+  color: var(--text-secondary);
+}
+
+/* ---------- Features ---------- */
+.features-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  text-align: left;
+  flex-wrap: wrap; /* wraps on smaller screens */
+}
+
+.feature {
+  max-width: 350px;
+  text-align: left; /* align badge and title left */
+}
+
+.feature-title {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between badge and title */
+}
+
+.feature-title h3 {
+  margin: 0; /* remove default margin */
+  font-size: 36px;
+  letter-spacing: -3px;
+  font-weight: 50;
+  white-space: nowrap;
+}
+
+.feature-text {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+/* ---------- Sections ---------- */
+.section {
+  padding: 60px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.section h2 {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+/* ---------- Popular Movies Pyramid ---------- */
+.popular-movies-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+/* Top row: 2 cards span 3 columns each */
+.popular-movies-grid .movie-card:nth-child(1),
+.popular-movies-grid .movie-card:nth-child(2) {
+  grid-column: span 3;
+}
+
+/* Bottom row: 3 cards span 2 columns each */
+.popular-movies-grid .movie-card:nth-child(3),
+.popular-movies-grid .movie-card:nth-child(4),
+.popular-movies-grid .movie-card:nth-child(5) {
+  grid-column: span 2;
+}
+
+
+.movie-card {
+  position: relative;       /* parent relative so absolute children align */
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  height: 200px;            /* fixed height for horizontal cards */
+  background: var(--bg-card);
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Poster fills card */
+.movie-card .poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rating - top left */
+.movie-card .rating {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #4CAF50;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+/* Genre - top right */
+.movie-card .genre {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  z-index: 2;
+}
+
+/* Bottom-left title & description */
+.movie-card .movie-bottom-info {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  color: #fff;
+  z-index: 2;
+}
+
+.movie-card .movie-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.movie-card .movie-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Series ---------- */
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  justify-items: center;
+}
+
+.series-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+  width: 270px;
+  transition: transform 0.2s ease;
+}
+
+.series-card:hover {
+  transform: translateY(-4px);
+}
+
+.series-card img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+/* Series info below poster */
+.series-info {
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.series-info strong {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.release-director {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.series-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.genres {
+  display: flex;
+  gap: 6px;
+}
+
+.genre-tag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Favorites ---------- */
+.favorite-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .popular-movies-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  .popular-movies-grid .movie-card:nth-child(1),
+  .popular-movies-grid .movie-card:nth-child(2) {
+    grid-column: span 3;
+  }
+
+  .popular-movies-grid .movie-card:nth-child(3),
+  .popular-movies-grid .movie-card:nth-child(4),
+  .popular-movies-grid .movie-card:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .series-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .favorite-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 700px) {
+  .popular-movies-grid,
+  .series-grid,
+  .favorite-grid {
+    grid-template-columns: 1fr;
   }
 }

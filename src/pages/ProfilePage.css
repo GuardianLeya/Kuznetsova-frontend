@@ -1,0 +1,84 @@
+.profile-page {
+  padding-bottom: 80px;
+}
+
+/* Top hero */
+.profile-hero {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-pic-container {
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info h1 {
+  margin: 0 0 12px 0;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.profile-genres {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Reviews */
+.user-reviews .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .user-reviews .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Favorites */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-hero {
+    flex-direction: column;
+    align-items: start;
+  }
+  .user-reviews .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+}
