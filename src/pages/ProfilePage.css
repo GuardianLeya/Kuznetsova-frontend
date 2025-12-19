@@ -2,7 +2,7 @@
   padding-bottom: 80px;
 }
 
-/* Top hero */
+/* Шапка */
 .profile-hero {
   display: flex;
   gap: 32px;
@@ -48,7 +48,7 @@
   font-weight: 500;
 }
 
-/* Reviews */
+/* Отзывы */
 .user-reviews .reviews-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -62,14 +62,14 @@
 }
 
 
-/* Favorites */
+/* Любимые */
 .favorites-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-/* Responsive */
+/* Медиа */
 @media (max-width: 900px) {
   .profile-hero {
     flex-direction: column;

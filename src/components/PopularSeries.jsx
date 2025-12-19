@@ -1,7 +1,7 @@
 import React from "react";
 
 const popularSeries = [
-  { id: "stranger-things", title: "Очень Странные Дела", posterUrl: "/img/placeholder.jpg", release: "2022", director: "Братья Даффер", reviews: "12 тыс", genres: ["Sci-Fi", "Зоррор"] },
+  { id: "stranger-things", title: "Очень Странные Дела", posterUrl: "/img/placeholder.jpg", release: "2022", director: "Братья Даффер", reviews: "12 тыс", genres: ["Sci-Fi", "Хоррор"] },
     { id: "witcher", title: "Ведьмак", posterUrl: "/img/placeholder.jpg", release: "2019", director: "Лорен Шмидт", reviews: "8 тыс", genres: ["Фэнтези"] },
     { id: "breaking-bad", title: "Во Все Тяжкие", posterUrl: "/img/placeholder.jpg", release: "2008", director: "Винс Гиллиган", reviews: "15 тыс", genres: ["Драма", "Криминал"] },
     { id: "the-mandalorian", title: "Мандалорец", posterUrl: "/img/placeholder.jpg", release: "2019", director: "Джон Фавро", reviews: "10 тыс", genres: ["Sci-Fi", "Экшн"] },

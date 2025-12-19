@@ -1,18 +1,14 @@
-/* ---------- Film Page ---------- */
 .film-page {
   padding-bottom: 80px;
 }
 
-/* ---------- Top Section: Poster + Screenshots ---------- */
-/* ---------- Film Page Top Section ---------- */
 .film-top-section.container {
   display: grid;
-  grid-template-columns: 300px 1fr; /* Left poster + right content */
+  grid-template-columns: 300px 1fr;
   gap: 40px;
   align-items: start;
 }
 
-/* Left column: Poster, Genres, Meta */
 .film-poster-column {
   position: sticky;
   top: 24px;
@@ -53,14 +49,12 @@
   opacity: 0.6;
 }
 
-/* Right column: Screenshots, Info, Buttons, Synopsis */
 .film-right-column {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* Screenshots */
 .film-screenshots {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -75,10 +69,9 @@
   border-radius: 12px;
 }
 
-/* Info & Buttons below screenshots */
 .film-info-row {
   display: grid;
-  grid-template-columns: 1fr 160px; /* Left info / Right button */
+  grid-template-columns: 1fr 160px; 
   align-items: center;
   gap: 12px;
 }
@@ -89,7 +82,7 @@
   color: var(--text-secondary);
 }
 
-/* Buttons */
+
 .btn {
   width: 100%;
   padding: 8px;
@@ -104,7 +97,7 @@
 .btn.rate { background: #2ecc71; } /* green */
 .btn.review { background: #f1c40f; }
 
-/* Synopsis */
+
 .film-synopsis {
   margin-top: 16px;
 }
@@ -118,7 +111,7 @@
   color: var(--text-secondary);
 }
 
-/* Responsive */
+
 @media (max-width: 900px) {
   .film-top-section.container {
     grid-template-columns: 1fr;
@@ -133,7 +126,6 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-/* ---------- Analysis Section ---------- */
 .film-analysis.container {
   margin-top: 40px;
 }
@@ -154,14 +146,12 @@
   align-items: start;
 }
 
-/* Left Column */
 .analysis-left, .analysis-right {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-/* Analysis cards */
 .analysis-card {
   background: var(--bg-card);
   border-radius: 16px;
@@ -174,7 +164,7 @@
 
 .analysis-card-header {
   display: grid;
-  grid-template-columns: 1fr auto; /* title/subtitle on left, tags on right */
+  grid-template-columns: 1fr auto; 
   align-items: start;
   gap: 12px;
   margin-bottom: 16px;
@@ -182,7 +172,7 @@
 
 .analysis-card-header-left {
   display: flex;
-  flex-direction: column; /* stack title and subtitle vertically */
+  flex-direction: column; 
   gap: 4px;
 }
 
@@ -236,7 +226,6 @@
   stroke: rgba(255,255,255,0.05);
 }
 
-/* Placeholder graph styling */
 .placeholder-graph {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
@@ -250,7 +239,7 @@
 }
 
 .rating-indexes {
-  margin-top: 16px;
+  margin-top: 8px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px 24px;
@@ -276,7 +265,6 @@
 .placeholder-graph.tall { height: 220px; }
 .placeholder-graph.wide { height: 140px; }
 
-/* Indexes in User Ratings card */
 .indexes-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -295,13 +283,10 @@
   font-weight: 500;
 }
 
-
-
-/* Reviews split: tone & toxicity */
 .review-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 8px;
   background: rgba(255, 255, 255, 0.06);
   padding: 12px;
   border-radius: 12px;
@@ -310,11 +295,11 @@
 .review-split div {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
   font-size: 13px;
 }
 
-/* Ratings inline display */
+
 .ratings-inline {
   display: flex;
   gap: 16px;
@@ -366,7 +351,6 @@
   color: var(--text-secondary);
 }
 
-/* Buttons aligned to right, only as wide as content */
 .review-buttons {
   display: flex;
   justify-content: flex-end;
@@ -419,8 +403,6 @@
   gap: 24px;
 }
 
-
-/* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .film-top-section.container {
     grid-template-columns: 1fr;

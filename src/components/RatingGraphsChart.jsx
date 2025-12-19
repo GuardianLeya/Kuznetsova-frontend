@@ -31,7 +31,6 @@ const ratingDistribution = [
 export default function RatingGraphsChart() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-      {/* Ratings Over Time */}
       <div className="analysis-card">
         <div className="analysis-panel">
         <h3>Рейтинг в сервисах по дням:</h3>
@@ -51,7 +50,6 @@ export default function RatingGraphsChart() {
         </div>
       </div>
 
-      {/* Ratings Distribution */}
       <div className="analysis-card">
         <div className="analysis-panel">
           <h3>Рейтинг к количеству оценок</h3>

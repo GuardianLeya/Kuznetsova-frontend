@@ -7,7 +7,7 @@ export default function RegisterModal({ onClose, setUser }) {
   const [password, setPassword] = useState("");
 
   const handleRegister = () => {
-    // Replace with backend registration
+    // бэк регистрации сюда
     const newUser = { name, avatarUrl: "/img/avatar.jpg" };
     setUser(newUser);
     onClose();

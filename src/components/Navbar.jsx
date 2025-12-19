@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
@@ -12,18 +11,16 @@ export default function Navbar({ user, setUser }) {
 
   const handleLogout = () => {
     setUser(null);
-    navigate("/"); // redirect to home
+    navigate("/"); // редирект на главную
   };
 
   return (
     <header className="navbar">
       <div className="container nav-content">
-        {/* Logo */}
         <span className="logo">
           <Link to="/">MovieScope</Link>
         </span>
 
-        {/* Navigation links */}
         <nav className="nav-links">
           <Link to="/">Главная</Link>
           <Link to="/">Фильмы</Link>
@@ -31,7 +28,6 @@ export default function Navbar({ user, setUser }) {
           <Link to="/">Избранное</Link>
         </nav>
 
-        {/* Search bar + User/Login */}
         <div className="nav-user-section">
           <input type="text" placeholder="Введите название" className="search-bar" />
 
@@ -42,7 +38,7 @@ export default function Navbar({ user, setUser }) {
           ) : (
             <div className="user-info">
               <Link to="/profile">
-                <img src={user.avatarUrl} alt="avatar" className="user-avatar" />
+                <img src={user.avatarUrl} alt="profile" className="user-avatar" />
               </Link>
               <button className="btn logout" onClick={handleLogout}>
                 Выйти
@@ -51,7 +47,6 @@ export default function Navbar({ user, setUser }) {
           )}
         </div>
 
-        {/* Modals */}
         {showLogin && (
           <LoginModal
             onClose={() => setShowLogin(false)}

@@ -4,17 +4,7 @@ import MovieCard from "../components/MovieCard";
 import ReviewCard from "../components/ReviewCard";
 import "./ProfilePage.css";
 
-export default function ProfilePage() {
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-    // Clear user state
-    setUser(null);
-
-    // Redirect to homepage
-    navigate("/");
-  };
-  // Mock user data
+export default function ProfilePage() {;
   const user = {
     name: "John Doe",
     profilePic: "/img/avatar.jpg",
@@ -33,10 +23,10 @@ export default function ProfilePage() {
       { movieTitle: "Interstellar", text: "Epic space journey!", rating: 5 },
     ],
   };
+  
 
   return (
     <main className="profile-page">
-      {/* Top section: profile picture, name, stats */}
       <section className="profile-hero container">
         <div className="profile-pic-container">
           <img src={user.profilePic} alt={user.name} className="profile-pic" />
@@ -44,8 +34,8 @@ export default function ProfilePage() {
         <div className="profile-info">
           <h1>{user.name}</h1>
           <div className="profile-stats">
-            <span>{user.likes} Likes</span>
-            <span>{user.reviewsCount} Reviews</span>
+            <span>{user.likes} лайка</span>
+            <span>{user.reviewsCount} отзыва</span>
           </div>
           <div className="profile-genres">
             {user.favoriteGenres.map((genre) => (
@@ -55,9 +45,8 @@ export default function ProfilePage() {
         </div>
       </section>
 
-      {/* User Reviews */}
       <section className="user-reviews container">
-        <h2>Your Reviews</h2>
+        <h2>Мои отзывы</h2>
         <div className="reviews-grid">
             {user.reviews.map((review, i) => (
             <ReviewCard key={i} review={review} showMovieTitle={true} />
@@ -67,7 +56,7 @@ export default function ProfilePage() {
 
       {/* Favorites */}
       <section className="favorites container">
-        <h2>Favorites</h2>
+        <h2>Избранное</h2>
         <div className="favorites-grid">
           {user.favorites.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />

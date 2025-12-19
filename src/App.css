@@ -20,7 +20,6 @@ body {
   --tag-color: #9BBcff;
 }
 
-/* ---------- Container ---------- */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -28,7 +27,6 @@ body {
   padding: 0 24px;
 }
 
-/* ---------- Navbar ---------- */
 .navbar {
   width: 100%;
   padding: 16px 0;
@@ -63,7 +61,12 @@ body {
   display: inline-block;
 }
 
-/* Search bar & login button */
+.logo:visited {
+  color: var(--text-primary);;
+  text-decoration: none;
+}
+
+/* Поиск */
 .nav-user-section {
   display: flex;
   align-items: center;
@@ -73,7 +76,8 @@ body {
 .search-bar {
   padding: 6px 12px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  color: #fff;
+  background-color: #1F6BFF;
   min-width: 200px;
 }
 
@@ -91,7 +95,7 @@ body {
 }
 
 .btn.login {
-  background: #1f6bff;
+  background: #2c2c2c;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -100,7 +104,7 @@ body {
 }
 
 .btn.logout {
-  background: #e74c3c;
+  background: #1F6BFF;
   color: #fff;
   padding: 6px 12px;
   border-radius: 8px;
@@ -108,8 +112,6 @@ body {
   cursor: pointer;
 }
 
-
-/* Modal */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -174,8 +176,8 @@ body {
 
 .modal-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: -40px;
+  right: 0px;
   background: none;
   border: none;
   color: #fff;
@@ -184,14 +186,14 @@ body {
 }
 
 
-/* ---------- Hero ---------- */
 .hero {
   text-align: center;
   padding: 60px 0;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 36px;
+  font-weight: 500;
   margin-bottom: 16px;
   color: #fff;
   border: 2px solid var(--accent);
@@ -216,7 +218,6 @@ body {
   max-width: 200px;
 }
 
-/* ---------- Stats ---------- */
 .stats {
   padding: 30px 0;
 }
@@ -237,28 +238,27 @@ body {
   color: var(--text-secondary);
 }
 
-/* ---------- Features ---------- */
 .features-container {
   display: flex;
   justify-content: center;
   gap: 40px;
   text-align: left;
-  flex-wrap: wrap; /* wraps on smaller screens */
+  flex-wrap: wrap; 
 }
 
 .feature {
   max-width: 350px;
-  text-align: left; /* align badge and title left */
+  text-align: left; 
 }
 
 .feature-title {
   display: flex;
   align-items: center;
-  gap: 8px; /* space between badge and title */
+  gap: 8px; 
 }
 
 .feature-title h3 {
-  margin: 0; /* remove default margin */
+  margin: 0; 
   font-size: 36px;
   letter-spacing: -3px;
   font-weight: 50;
@@ -285,24 +285,25 @@ body {
   margin-bottom: 6px;
 }
 
-/* ---------- Sections ---------- */
+
 .section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .section h2 {
+  font-size: 36px;
+  font-weight: 400;
   margin-bottom: 32px;
   text-align: left;
 }
 
-/* ---------- Popular Movies Pyramid ---------- */
+
 .popular-movies-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;
 }
 
-/* Top row: 2 cards span 3 columns each */
 .popular-movies-grid .movie-card:nth-child(1),
 .popular-movies-grid .movie-card:nth-child(2) {
   grid-column: span 3;

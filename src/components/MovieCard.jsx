@@ -10,7 +10,7 @@ export default function MovieCard({ movie }) {
       <div className="movie-bottom-info">
         <strong className="movie-title">{movie.title}</strong>
         <div>
-        <span className="movie-desc">{movie.description || "Best movie 2025"}</span>
+        <span className="movie-desc">{movie.description || "Лучший фильм"}</span>
         </div>
       </div>
     </Link>

@@ -2,7 +2,6 @@ import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 export default function BudgetChart(props) {
-  // Use the props directly
   const { budget, boxOffice, name } = props;
 
   const data = [
@@ -17,8 +16,8 @@ export default function BudgetChart(props) {
           <YAxis type="category" dataKey="name" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="budget" fill="#FF4C4C" name="Бюджет" />
-          <Bar dataKey="boxOffice" fill="#1F6BFF" name="Сборы" />
+          <Bar  barSize={100} dataKey="budget" fill="#FF4C4C" name="Бюджет" />
+          <Bar barSize={100} dataKey="boxOffice" fill="#1F6BFF" name="Сборы" />
         </BarChart>
       </ResponsiveContainer>
     </div>
